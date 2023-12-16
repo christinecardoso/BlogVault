@@ -12,9 +12,23 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2
 
+    - name: Fetch Changes
+      run: git fetch
+
+    - name: Debug Information
+      run: |
+        git status
+        git branch -vv
+
+    - name: Configure Git
+      run: |
+        git config user.name "${{ github.actor }}"
+        git config user.email "${{ github.actor }}@users.noreply.github.com"
+
     - name: Sync Changes
       run: |
         cd ${{ github.workspace }}
         git add .
+        git status  # Print the status for debugging purposes
         git commit -m "Sync at $(date)"
         git push

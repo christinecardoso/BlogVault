@@ -6,3 +6,15 @@
 !.obsidian/core-plugins.json
 !.obsidian/graph.json
 !.obsidian/hotkeys.json
+.devdocs
+Inbox
+Templates
+Utility
+Z
+Journal
+*.sty
+*.css
+.obsidian.vimrc
+.otv_metadata
+.DS_Store
+MEDIA
