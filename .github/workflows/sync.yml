@@ -28,8 +28,16 @@ jobs:
 
     - name: Sync Changes
       run: |
+        set -e
         git pull origin main  # Pull changes from the remote branch
         git add -A  # Stage all changes, including untracked files
         git status  # Print the status for debugging purposes
         git commit -m "Sync at $(date)"
-        git push
+
+        if [[ $(git status --porcelain) ]]; then
+          git push
+        else
+          echo "No changes to commit or push."
+        fi
+
+        trap 'echo "Error: Something went wrong!"' ERR
