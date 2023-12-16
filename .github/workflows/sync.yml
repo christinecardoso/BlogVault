@@ -3,6 +3,7 @@ name: Sync to GitHub
 on:
   schedule:
     - cron: '*/30 * * * *' # Run every 30 minutes
+  workflow_dispatch:  # Manual trigger
 
 jobs:
   sync:
