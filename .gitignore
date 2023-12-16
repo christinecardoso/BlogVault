@@ -18,3 +18,4 @@ Journal
 .otv_metadata
 .DS_Store
 MEDIA
+*.json
