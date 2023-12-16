@@ -28,7 +28,7 @@ jobs:
     - name: Sync Changes
       run: |
         cd ${{ github.workspace }}
-        git add .
+        git add -A  # Stage all changes, including untracked files
         git status  # Print the status for debugging purposes
         git commit -m "Sync at $(date)"
         git push
